@@ -97,13 +97,20 @@ public class BootmNavigationBarActivity extends AppCompatActivity implements Bot
 
     @Override
     public void onBackPressed() {
-
-        if(tag.equals("1")){
-            super.onBackPressed();
+  if(getSupportFragmentManager().getBackStackEntryCount()==1){
+            finish();
         }
-
+      /*  else if(getSupportFragmentManager().getBackStackEntryCount()==1){
+            bottomNavigationView.setSelectedItemId(R.id.home);
+            getSupportFragmentManager().popBackStack();
+        }
+        else if (getSupportFragmentManager().getBackStackEntryCount()==2){
+            bottomNavigationView.setSelectedItemId(R.id.settings);
+            getSupportFragmentManager().popBackStack();
+        }*/
         else {
             getSupportFragmentManager().popBackStack();
+        //bottomNavigationView.setSelectedItemId(bottomNavigationView.getSelectedItemId());
         }
 
     }
