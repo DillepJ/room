@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private class JsonTask extends AsyncTask<String, String, String> {
         protected void onPreExecute() {
             super.onPreExecute();
-            pd = new ProgressDialog(MainActivity.this);
-            pd.setMessage("Please wait");
-            pd.setCancelable(false);
-            pd.show();
+            //pd = new ProgressDialog(MainActivity.this);
+            //pd.setMessage("Please wait");
+            //pd.setCancelable(false);
+            //pd.show();
         }
 
         protected String doInBackground(String... params) {
@@ -174,9 +174,9 @@ public class MainActivity extends AppCompatActivity {
                     new JsonTask().execute(next);
                 }
                 else {
-                    if (pd.isShowing()) {
-                        pd.dismiss();
-                    }
+                    //if (pd.isShowing()) {
+                      //  pd.dismiss();
+                    //}
                     go.setVisibility(View.VISIBLE);
                 }
 
